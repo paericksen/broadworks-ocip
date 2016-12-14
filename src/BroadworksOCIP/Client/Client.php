@@ -125,15 +125,23 @@ class Client
      */
     public function authenticate($userId = null)
     {
-        if ($userId) {
-            $this->session->setUserId($userId);
-            $msg = new AuthenticationRequest($this->session->getUserId());
-            if (($this->send($msg)) && ($this->getResponse() InstanceOf ComplexType)) {
-                $this->session->setNonce($this->getResponse()->getNonce());
-                return true;
-            }
-        }
-        return false;
+    	if ($userId) {
+    		$this->session->setUserId($userId);
+
+    		$msg = new AuthenticationRequest($this->session->getUserId());
+
+    		if ($this->send($msg)){
+    			$response = $this->getResponse();
+
+    			if($response instanceof ComplexType) {
+    				$this->session->setNonce($response->getNonce());
+
+    				return true;
+    			}
+    		}
+    	}
+
+    	return false;
     }
 
     /**
