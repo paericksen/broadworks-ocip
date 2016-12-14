@@ -133,7 +133,7 @@ class TCPTransport implements TransportInterface
     {
         $this->response = '';
         if ($this->pending) {
-            while (!feof($this->socket)) {
+        	while (!stripos($this->response, '/BroadsoftDocument')) {
                 $this->response .= fgets($this->socket, 4096);
             }
             $this->pending = false;
