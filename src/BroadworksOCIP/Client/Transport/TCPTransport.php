@@ -133,7 +133,7 @@ class TCPTransport implements TransportInterface
     {
         $this->response = '';
         if ($this->pending) {
-            while (!strpos($this->response, PHP_EOL)) {
+            while (!feof($this->socket)) {
                 $this->response .= fgets($this->socket, 4096);
             }
             $this->pending = false;
