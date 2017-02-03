@@ -29,10 +29,19 @@ class DepartmentKey extends ComplexType implements ComplexInterface {
 
 	protected $name;
 
-	public function __construct(ServiceProviderId $serviceProviderId, GroupId $groupId, DepartmentName $name){
-		$this->serviceProviderId = setServiceProviderId($serviceProviderId);
-		$this->groupId = setGroupId($groupId);
-		$this->name = setName($name);
+	/**
+	 *
+	 * @param
+	 *        	$serviceProviderId
+	 * @param
+	 *        	$groupId
+	 * @param
+	 *        	$name
+	 */
+	public function __construct($serviceProviderId, $groupId, $name){
+		$this->setServiceProviderId($serviceProviderId);
+		$this->setGroupId($groupId);
+		$this->setName($name);
 	}
 
 	/**
