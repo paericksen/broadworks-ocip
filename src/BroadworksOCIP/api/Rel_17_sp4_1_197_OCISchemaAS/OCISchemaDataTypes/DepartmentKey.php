@@ -21,7 +21,9 @@ use BroadworksOCIP\Builder\Types\ComplexType;
  */
 class DepartmentKey extends ComplexType implements ComplexInterface {
 
-	public $elementName = 'DepartmentKey';
+	public $elementName = 'departmentKey';
+
+	public $attributes = array('xsi:type' => "GroupDepartmentKey");
 
 	protected $serviceProviderId;
 
@@ -78,7 +80,7 @@ class DepartmentKey extends ComplexType implements ComplexInterface {
 
 	public function setName($name){
 		$this->name = ($name instanceof DepartmentName) ? $name : new DepartmentName($name);
-		$this->groupId->setElementName('name');
+		$this->name->setElementName('name');
 		return $this;
 	}
 }
