@@ -1,17 +1,18 @@
 <?php
 /**
  * This file is part of http://github.com/LukeBeer/BroadworksOCIP
- * 
+ *
  * (c) 2013-2015 Luke Berezynskyj <eat.lemons@gmail.com>
  */
 
-namespace BroadworksOCIP\api\Rel_17_sp4_1_197_OCISchemaAS\Services\OCISchemaServiceOutgoingCallingPlan; 
+namespace BroadworksOCIP\api\Rel_17_sp4_1_197_OCISchemaAS\Services\OCISchemaServiceOutgoingCallingPlan;
 
 use BroadworksOCIP\Builder\Types\SimpleContent;
 use BroadworksOCIP\Builder\Types\ComplexInterface;
 use BroadworksOCIP\Builder\Types\ComplexType;
 use BroadworksOCIP\Response\ResponseOutput;
 use BroadworksOCIP\Client\Client;
+use BroadworksOCIP\api\Rel_17_sp4_1_197_OCISchemaAS\OCISchemaDataTypes\DepartmentKey;
 
 
 /**
@@ -23,6 +24,11 @@ class OutgoingCallingPlanOriginatingDepartmentPermissionsModify extends ComplexT
     protected $departmentKey;
     protected $permissions;
 
+    /**
+     *
+     * @param string $departmentKey
+     * @param array|OutgoingCallingPlanOriginatingPermissions $permissions
+     */
     public function __construct(
          $departmentKey = '',
          $permissions = null
@@ -40,17 +46,16 @@ class OutgoingCallingPlanOriginatingDepartmentPermissionsModify extends ComplexT
     }
 
     /**
-     * 
+     *
      */
-    public function setDepartmentKey($departmentKey = null)
+    public function setDepartmentKey(DepartmentKey $departmentKey = null)
     {
-        $this->departmentKey = new SimpleContent($departmentKey);
-        $this->departmentKey->setElementName('departmentKey');
+        $this->departmentKey = $departmentKey;
         return $this;
     }
 
     /**
-     * 
+     *
      * @return SimpleContent $departmentKey
      */
     public function getDepartmentKey()
@@ -60,18 +65,45 @@ class OutgoingCallingPlanOriginatingDepartmentPermissionsModify extends ComplexT
             : null;
     }
 
-    /**
-     * 
-     */
+/**
+ *
+ * @param array|OutgoingCallingPlanOriginatingPermissions $permissions
+ * @return \BroadworksOCIP\api\Rel_17_sp4_1_197_OCISchemaAS\Services\OCISchemaServiceOutgoingCallingPlan\OutgoingCallingPlanOriginatingDepartmentPermissionsModify
+ */
     public function setPermissions($permissions = null)
     {
-        $this->permissions = new SimpleContent($permissions);
-        $this->permissions->setElementName('permissions');
+        if($permissions instanceof OutgoingCallingPlanOriginatingPermissions){
+        	$this->permissions = $permissions;
+        }
+        elseif(is_array($permissions)){
+        	$this->permissions = new  OutgoingCallingPlanOriginatingPermissions(
+        	$permissions['group'],
+        	$permissions['local'],
+        	$permissions['tollFree'],
+        	$permissions['toll'],
+        	$permissions['international'],
+        	$permissions['operatorAssisted'],
+        	$permissions['chargeableDirectoryAssisted'],
+        	$permissions['specialServicesI'],
+        	$permissions['specialServicesII'],
+        	$permissions['premiumServicesI'],
+        	$permissions['premiumServicesII'],
+        	$permissions['casual'],
+        	$permissions['urlDialing'],
+        	$permissions['unknown']
+        			);
+        }
+        else{
+        	$this->permissions = null;
+        }
+
+//         $this->permissions->setElementName('permissions');
+		$this->permissions->elementName = 'permissions';
         return $this;
     }
 
     /**
-     * 
+     *
      * @return SimpleContent $permissions
      */
     public function getPermissions()
