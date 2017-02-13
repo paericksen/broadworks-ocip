@@ -1,11 +1,11 @@
 <?php
 /**
  * This file is part of http://github.com/LukeBeer/BroadworksOCIP
- * 
+ *
  * (c) 2013-2015 Luke Berezynskyj <eat.lemons@gmail.com>
  */
 
-namespace BroadworksOCIP\api\Rel_17_sp4_1_197_OCISchemaAS\OCISchemaGroup; 
+namespace BroadworksOCIP\api\Rel_17_sp4_1_197_OCISchemaAS\OCISchemaGroup;
 
 use BroadworksOCIP\api\Rel_17_sp4_1_197_OCISchemaAS\OCISchemaDataTypes\DN;
 use BroadworksOCIP\Builder\Types\ComplexInterface;
@@ -21,7 +21,7 @@ use BroadworksOCIP\Client\Client;
 class GroupDnGetListResponse extends ComplexType implements ComplexInterface
 {
     public    $elementName = 'GroupDnGetListResponse';
-    protected $phoneNumber;
+    protected $phoneNumber = array();
 
     /**
      * @return \BroadworksOCIP\api\Rel_17_sp4_1_197_OCISchemaAS\OCISchemaGroup\GroupDnGetListResponse $response
@@ -32,19 +32,19 @@ class GroupDnGetListResponse extends ComplexType implements ComplexInterface
     }
 
     /**
-     * 
+     *
      */
     public function setPhoneNumber($phoneNumber = null)
     {
-        $this->phoneNumber = ($phoneNumber InstanceOf DN)
+        $this->phoneNumber[] = ($phoneNumber InstanceOf DN)
              ? $phoneNumber
              : new DN($phoneNumber);
-        $this->phoneNumber->setElementName('phoneNumber');
+//         $this->phoneNumber->setElementName('phoneNumber');
         return $this;
     }
 
     /**
-     * 
+     *
      * @return DN $phoneNumber
      */
     public function getPhoneNumber()
