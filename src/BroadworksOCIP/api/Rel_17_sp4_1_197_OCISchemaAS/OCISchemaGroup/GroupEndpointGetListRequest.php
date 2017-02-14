@@ -1,11 +1,11 @@
 <?php
 /**
  * This file is part of http://github.com/LukeBeer/BroadworksOCIP
- * 
+ *
  * (c) 2013-2015 Luke Berezynskyj <eat.lemons@gmail.com>
  */
 
-namespace BroadworksOCIP\api\Rel_17_sp4_1_197_OCISchemaAS\OCISchemaGroup; 
+namespace BroadworksOCIP\api\Rel_17_sp4_1_197_OCISchemaAS\OCISchemaGroup;
 
 use BroadworksOCIP\api\Rel_17_sp4_1_197_OCISchemaAS\OCISchemaSearchCriteria\SearchCriteriaLinePortUserPart;
 use BroadworksOCIP\api\Rel_17_sp4_1_197_OCISchemaAS\OCISchemaSearchCriteria\SearchCriteriaDeviceMACAddress;
@@ -68,18 +68,18 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     ) {
         $this->setServiceProviderId($serviceProviderId);
         $this->setGroupId($groupId);
-        $this->setResponseSizeLimit($responseSizeLimit);
-        $this->setSearchCriteriaLinePortUserPart($searchCriteriaLinePortUserPart);
-        $this->setSearchCriteriaLinePortDomain($searchCriteriaLinePortDomain);
-        $this->setSearchCriteriaUserLastName($searchCriteriaUserLastName);
-        $this->setSearchCriteriaUserFirstName($searchCriteriaUserFirstName);
-        $this->setSearchCriteriaUserId($searchCriteriaUserId);
-        $this->setSearchCriteriaDn($searchCriteriaDn);
-        $this->setSearchCriteriaExtension($searchCriteriaExtension);
-        $this->setSearchCriteriaDeviceType($searchCriteriaDeviceType);
-        $this->setSearchCriteriaDeviceName($searchCriteriaDeviceName);
-        $this->setSearchCriteriaDeviceMACAddress($searchCriteriaDeviceMACAddress);
-        $this->setSearchCriteriaDeviceNetAddress($searchCriteriaDeviceNetAddress);
+        if(!empty($responseSizeLimit)) $this->setResponseSizeLimit($responseSizeLimit);
+        if(!empty($searchCriteriaLinePortUserPart)) $this->setSearchCriteriaLinePortUserPart($searchCriteriaLinePortUserPart);
+        if(!empty($searchCriteriaLinePortDomain)) $this->setSearchCriteriaLinePortDomain($searchCriteriaLinePortDomain);
+        if(!empty($searchCriteriaUserLastName)) $this->setSearchCriteriaUserLastName($searchCriteriaUserLastName);
+        if(!empty($searchCriteriaUserFirstName)) $this->setSearchCriteriaUserFirstName($searchCriteriaUserFirstName);
+        if(!empty($searchCriteriaUserId)) $this->setSearchCriteriaUserId($searchCriteriaUserId);
+        if(!empty($searchCriteriaDn)) $this->setSearchCriteriaDn($searchCriteriaDn);
+        if(!empty($searchCriteriaExtension)) $this->setSearchCriteriaExtension($searchCriteriaExtension);
+        if(!empty($searchCriteriaDeviceType)) $this->setSearchCriteriaDeviceType($searchCriteriaDeviceType);
+        if(!empty($searchCriteriaDeviceName)) $this->setSearchCriteriaDeviceName($searchCriteriaDeviceName);
+        if(!empty($searchCriteriaDeviceMACAddress)) $this->setSearchCriteriaDeviceMACAddress($searchCriteriaDeviceMACAddress);
+        if(!empty($searchCriteriaDeviceNetAddress)) $this->setSearchCriteriaDeviceNetAddress($searchCriteriaDeviceNetAddress);
     }
 
     /**
@@ -91,7 +91,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      */
     public function setServiceProviderId($serviceProviderId = null)
     {
@@ -103,7 +103,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      * @return ServiceProviderId $serviceProviderId
      */
     public function getServiceProviderId()
@@ -114,7 +114,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      */
     public function setGroupId($groupId = null)
     {
@@ -126,7 +126,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      * @return GroupId $groupId
      */
     public function getGroupId()
@@ -137,7 +137,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      */
     public function setResponseSizeLimit($responseSizeLimit = null)
     {
@@ -149,7 +149,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      * @return ResponseSizeLimit $responseSizeLimit
      */
     public function getResponseSizeLimit()
@@ -160,7 +160,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      */
     public function setSearchCriteriaLinePortUserPart(SearchCriteriaLinePortUserPart $searchCriteriaLinePortUserPart = null)
     {
@@ -172,7 +172,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      * @return SearchCriteriaLinePortUserPart $searchCriteriaLinePortUserPart
      */
     public function getSearchCriteriaLinePortUserPart()
@@ -181,7 +181,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      */
     public function setSearchCriteriaLinePortDomain(SearchCriteriaLinePortDomain $searchCriteriaLinePortDomain = null)
     {
@@ -193,7 +193,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      * @return SearchCriteriaLinePortDomain $searchCriteriaLinePortDomain
      */
     public function getSearchCriteriaLinePortDomain()
@@ -202,7 +202,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      */
     public function setSearchCriteriaUserLastName(SearchCriteriaUserLastName $searchCriteriaUserLastName = null)
     {
@@ -214,7 +214,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      * @return SearchCriteriaUserLastName $searchCriteriaUserLastName
      */
     public function getSearchCriteriaUserLastName()
@@ -223,7 +223,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      */
     public function setSearchCriteriaUserFirstName(SearchCriteriaUserFirstName $searchCriteriaUserFirstName = null)
     {
@@ -235,7 +235,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      * @return SearchCriteriaUserFirstName $searchCriteriaUserFirstName
      */
     public function getSearchCriteriaUserFirstName()
@@ -244,7 +244,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      */
     public function setSearchCriteriaUserId(SearchCriteriaUserId $searchCriteriaUserId = null)
     {
@@ -256,7 +256,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      * @return SearchCriteriaUserId $searchCriteriaUserId
      */
     public function getSearchCriteriaUserId()
@@ -265,7 +265,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      */
     public function setSearchCriteriaDn(SearchCriteriaDn $searchCriteriaDn = null)
     {
@@ -277,7 +277,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      * @return SearchCriteriaDn $searchCriteriaDn
      */
     public function getSearchCriteriaDn()
@@ -286,7 +286,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      */
     public function setSearchCriteriaExtension(SearchCriteriaExtension $searchCriteriaExtension = null)
     {
@@ -298,7 +298,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      * @return SearchCriteriaExtension $searchCriteriaExtension
      */
     public function getSearchCriteriaExtension()
@@ -307,7 +307,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      */
     public function setSearchCriteriaDeviceType(SearchCriteriaDeviceType $searchCriteriaDeviceType = null)
     {
@@ -319,7 +319,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      * @return SearchCriteriaDeviceType $searchCriteriaDeviceType
      */
     public function getSearchCriteriaDeviceType()
@@ -328,7 +328,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      */
     public function setSearchCriteriaDeviceName(SearchCriteriaDeviceName $searchCriteriaDeviceName = null)
     {
@@ -340,7 +340,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      * @return SearchCriteriaDeviceName $searchCriteriaDeviceName
      */
     public function getSearchCriteriaDeviceName()
@@ -349,7 +349,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      */
     public function setSearchCriteriaDeviceMACAddress(SearchCriteriaDeviceMACAddress $searchCriteriaDeviceMACAddress = null)
     {
@@ -361,7 +361,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      * @return SearchCriteriaDeviceMACAddress $searchCriteriaDeviceMACAddress
      */
     public function getSearchCriteriaDeviceMACAddress()
@@ -370,7 +370,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      */
     public function setSearchCriteriaDeviceNetAddress(SearchCriteriaDeviceNetAddress $searchCriteriaDeviceNetAddress = null)
     {
@@ -382,7 +382,7 @@ class GroupEndpointGetListRequest extends ComplexType implements ComplexInterfac
     }
 
     /**
-     * 
+     *
      * @return SearchCriteriaDeviceNetAddress $searchCriteriaDeviceNetAddress
      */
     public function getSearchCriteriaDeviceNetAddress()
