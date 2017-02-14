@@ -10,6 +10,8 @@
 
 namespace BroadworksOCIP\Builder\Types;
 
+use BroadworksOCIP\Console\Table;
+
 
 /**
  * Class TableType - Used for OCITable responses only, never in requests.
@@ -113,8 +115,7 @@ class TableType
      */
     public function getValue()
     {
-        require_once 'Console/Table.php';
-        $tbl = new \Console_Table();
+        $tbl = new Table();
         $tbl->setHeaders($this->getColHeadings());
         $tbl->addData($this->getAllRows());
         return $tbl->getTable();
